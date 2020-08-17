@@ -1,0 +1,154 @@
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	margin: 0;
+	padding: 4px;
+	height: 100%;
+	background-color: white;
+}
+
+table {
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+table td:last-child {
+    width: 100%;
+}
+
+th, td {
+	padding: 4px;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+textarea {
+	resize: none;
+	height: 75px;
+}
+
+a {
+	cursor: pointer;
+}
+
+fieldset {
+	line-height: 6px;
+	margin-top: 8px;
+}
+
+a[target="_blank"]::after {
+	content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
+	margin: 0 3px 0 5px;
+}
+
+.selector-list {
+	flex: 1 1 0;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.selector-list-header {
+	padding: 2px;
+}
+
+.selector-list-table {
+	overflow: auto;
+	max-height: 100%;
+}
+
+.page {
+	display: grid;
+	height: 100%;
+	grid-gap: 8px;
+}
+
+.page-section {
+	border: 1px solid black;
+	display: flex;
+	overflow: auto;
+}
+
+.page-content {
+	flex: 1 1 0;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+.page-content div {
+	max-height: 100%;
+}
+
+.page-content-title {
+	background-image: radial-gradient(#dddddd 1px, #ffffff 0px);
+	background-size: 3px 3px;
+	background-repeat: repeat;
+	border-bottom: 1px solid #dddddd;
+	text-align: center;
+}
+
+.page-content-title span {
+	background: white;
+}
+
+.task-title-homework {
+	background-image: radial-gradient(#819fb7 1px, #a3c1d9 0px);
+}
+
+.task-title-homework span {
+	background: #a3c1d9;
+}
+
+.task-title-flexibletask {
+	background-image: radial-gradient(#bbaa76 1px, #ddcc98 0px);
+}
+
+.task-title-flexibletask span {
+	background: #ddcc98;
+}
+
+.task-title-quiz {
+	background-image: radial-gradient(#dca9b0 1px, #fecbd2 0px);
+}
+
+.task-title-quiz span {
+	background: #fecbd2;
+}
+
+.task-title-spellingtest {
+	background-image: radial-gradient(#9ca3a9 1px, #bec5cb 0px);
+}
+
+.task-title-spellingtest span {
+	background: #bec5cb;
+}
+
+.task-title-classtest {
+	background-image: radial-gradient(#8faa7d 1px, #b1cc9f 0px);
+}
+
+.task-title-classtest span {
+	background: #b1cc9f;
+}
+
+.task-title a {
+	color: black;
+	text-decoration: none;
+}
+
+.avatar {
+	border: 1px solid black;
+}
+
+.column {
+	flex-direction: column;
+}
+
+.scroll {
+	overflow: auto;
+}

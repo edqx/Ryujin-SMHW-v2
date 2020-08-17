@@ -58,23 +58,31 @@ const createWindow = () => {
 		}
 		
 		if (has) {
-			Menu.setApplicationMenu(menu);
+			storage.get("auth", function (err, auth) {
+                Menu.setApplicationMenu(menu);
 
-			window = new BrowserWindow({
-				minWidth: 1280,
-				minHeight: 720,
-				webPreferences: {
-					nodeIntegration: true
-				},
-				icon: path.resolve(__dirname, "../asset/icon.png")
-            });
+                window = new BrowserWindow({
+                    minWidth: 1280,
+                    minHeight: 720,
+                    webPreferences: {
+                        nodeIntegration: true
+                    },
+                    icon: path.resolve(__dirname, "../asset/icon.png")
+                });
 
-            window.loadFile(path.join(__dirname, "../public/index.html"));
+                window.loadFile(path.join(__dirname, "../public/index.html"));
 
-            window.webContents.on("new-window", function (event, url) {
-                event.preventDefault();
-        
-                require('electron').shell.openExternal(url);
+                window.webContents.on("new-window", function (event, url) {
+                    event.preventDefault();
+            
+                    require('electron').shell.openExternal(url);
+                });
+
+                window.on("close", function () {
+                    if (!auth.remember) {
+                        storage.remove("auth");
+                    }
+                });
             });
 		} else {
 			window = new BrowserWindow({

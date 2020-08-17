@@ -40,7 +40,7 @@ const createWindow = () => {
             {
                 label: "Query Submissions",
                 click() {
-                    mainWindow.webContents.send("query-submissions");
+                    window.webContents.send("query-submissions");
                 }
             }
         ]

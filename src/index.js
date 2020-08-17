@@ -92,7 +92,7 @@ const createWindow = () => {
 					nodeIntegration: true
 				},
 				icon: path.resolve(__dirname, "../asset/icon.png"),
-				resiable: false,
+				resizable: false,
 				transparent: true,
 				frame: false
 			});
